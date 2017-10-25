@@ -1,0 +1,60 @@
+$backgroundColor: #FFF;
+$headerFontColor: #FFF;
+$fontColor: #000;
+$mainBorder: 1px solid #FFF;
+$mainFontSize: 16px;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+  font-size: $mainFontSize;
+  height: 100vh;
+}
+
+a.navbar-brand {
+  color: $headerFontColor !important;
+}
+
+a.nav-link {
+  text-align: center;
+}
+
+.background {
+  width: 100%;
+
+  img {
+    position: absolute;
+  }
+
+  h1 {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+    padding: .28em;
+    border-radius: 6px;
+    color: $headerFontColor;
+    position: absolute; 
+    left: 50%;
+    top: 280px;
+    transform: translate(-50%, -50%)
+  }
+}
+
+footer {
+  color: $fontColor;
+  display: flex;
+  padding-top: 5vh;
+
+  p {
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+  }
+}
+
