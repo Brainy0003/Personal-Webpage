@@ -10,7 +10,7 @@ $procionoFont: 'Prociono', serif;
   font-family: 'Prociono';
   font-style: normal;
   font-weight: 400;
-  src: local('Prociono'), local('Prociono-Regular'), url(../fonts/Prociono-Regular.woff2) format('woff2');
+  src: local('Prociono'), local('Prociono-Regular'), url(fonts/Prociono-Regular.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
@@ -18,7 +18,7 @@ $procionoFont: 'Prociono', serif;
   font-family: 'Neuton';
   font-style: normal;
   font-weight: 400;
-  src: local('Neuton Regular'), local('Neuton-Regular'), url(../fonts/Neuton-Regular.woff2) format('woff2');
+  src: local('Neuton Regular'), local('Neuton-Regular'), url(fonts/Neuton-Regular.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
@@ -26,7 +26,7 @@ $procionoFont: 'Prociono', serif;
   font-family: 'Neuton';
   font-style: normal;
   font-weight: 700;
-  src: local('Neuton Bold'), local('Neuton-Bold'), url(../fonts/Neuton-Bold.woff2) format('woff2');
+  src: local('Neuton Bold'), local('Neuton-Bold'), url(fonts/Neuton-Bold.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
@@ -41,7 +41,7 @@ $procionoFont: 'Prociono', serif;
   display: flex;
   flex-direction: column;
   font-size: $mainFontSize;
-  min-height: 100vh;
+  width: 100vw;
 
   h2 {
     font-family: $neutonFont;
@@ -81,7 +81,6 @@ a.nav-link {
 
 .background {
   height: 524px;
-  min-width: 100vw;
   overflow: hidden;
 
   img {
@@ -89,7 +88,7 @@ a.nav-link {
   }
 
   h1 {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     border-radius: 6px;
     color: $headerFontColor;
     font-family: $procionoFont;
@@ -106,6 +105,7 @@ a.nav-link {
 }
 
 .projects {
+  width: 100vw;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -117,48 +117,111 @@ a.nav-link {
   flex: 1;
   justify-content: space-around;
   margin-bottom: 40px;
-  min-width: 55vw;
+  min-width: 65vw;
 }
 
 .box {
-  border: 4px solid gray;
+  border: 4px solid #212529;
   display: flex;
-  min-width: 477px;
-  height: 227px;
+  height: 225px;
+  min-width: 475px;
 }
 
-#box1,
-#box2,
-#box3,
-#box4,
-#box5,
-#box6 {
-  min-width: 100%;
-  min-height: 100%;
-}
+.view {
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
 
-#box1 {
-  background: url(../images/tribute-page.jpg) center center no-repeat;
-}
+  .mask {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
 
-#box2 {
-  background: url(../images/local-weather-app.jpg) center center no-repeat;
-}
+  .mask, .content {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 
-#box3 {
-  background: url(../images/twitchtv-viewer.jpg) center center no-repeat;
-}
+  img {
+    position: relative;
+    transition: all 0.2s linear;
+    overflow: hidden;
+  }
 
-#box4 {
-  background: url(../images/wikipedia-viewer.jpg) center center no-repeat;
-}
+  h2 {
+    color: #fff;
+    font-family: $procionoFont;
+    font-size: 1.2em;
+    letter-spacing: .125em;
+    margin: 20px 0 0 0;
+    opacity: 0;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateY(-100px);
+    transition: all 0.2s ease-in-out;
+  }
 
-#box5 {
-  background: url(../images/threejs_youtube.jpg) center center no-repeat;
-}
+  p {
+    color: #fff;
+    font-family: $neutonFont;
+    font-size: 1.15em;
+    letter-spacing: .045em;
+    opacity: 0;
+    padding: 0px 20px 0px;
+    position: relative;
+    text-align: center;
+    transform: translateY(100px);
+    transition: all 0.2s linear;
+  }
 
-#box6 {
-  background: url(../images/random-quote.jpg) center center no-repeat;
+  a.info {
+    background: #000;
+    box-shadow: 0 0 1px #000;
+    color: #fff;
+    display: inline-block;
+    opacity: 0;
+    padding: 7px 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 5px #000
+    }
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  &:hover .mask {
+    opacity: 1;
+  }
+
+  &:hover h2,
+  &:hover p,
+  &:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  &:hover p {
+    transition-delay: 0.1s;
+  }
+
+  &:hover a.info {
+    transition-delay: 0.2s;
+  }
 }
 
 #footer {
@@ -192,17 +255,70 @@ and (max-width: 640px) {
 
   .project-row {
     flex-wrap: wrap;
-    width: 100vw;
+    max-width: 350px;
     margin-bottom: 0;
   }
 
   .box {
     border: 4px solid gray;
-    min-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
   #footer p {
     font-size: 0.85em;
   }
 }
+
+@media screen
+and (min-width: 641px)
+and (max-width: 900px) {
+
+  .background h1 {
+    font-size: 1.4em;
+    min-width: 350px;
+  }
+
+  body h2 {
+    font-size: 1.3em;
+    padding: 0 20px;
+  }
+
+  .project-row {
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-bottom: 0;
+  }
+
+  .box {
+    border: 4px solid gray;
+    width: 50%;
+    margin-bottom: 40px;
+  }
+
+  #footer p {
+    font-size: 0.85em;
+  }
+}
+
+@media screen
+and (min-width: 901px)
+and (max-width: 1270px) {
+
+  .project-row {
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+
+  .box {
+    min-width: 100%;
+    margin-bottom: 40px;
+  }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    .project-row {
+      width: 90vw;
+    }
+  }
