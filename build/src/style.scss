@@ -1,4 +1,4 @@
-$backgroundColor: #FFF;
+$backgroundColor: rgb(231, 231, 231);
 $fontColor: #000;
 $headerFontColor: #FFF;
 $mainBorder: 1px solid #FFF;
@@ -36,7 +36,7 @@ $procionoFont: 'Prociono', serif;
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: $backgroundColor;
   display: flex;
   flex-direction: column;
@@ -117,40 +117,48 @@ a.nav-link {
   flex: 1;
   justify-content: space-around;
   margin-bottom: 40px;
-  min-width: 50vw;
+  min-width: 55vw;
 }
 
 .box {
+  border: 4px solid gray;
   display: flex;
-  min-width: 350px;
-  min-height: 350px;
+  min-width: 477px;
+  height: 227px;
 }
 
-.box1 {
-  background-size: cover;
-  background-image: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/tribute-page.jpg);
+#box1,
+#box2,
+#box3,
+#box4,
+#box5,
+#box6 {
+  min-width: 100%;
+  min-height: 100%;
 }
 
-.box2 {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/local-weather-app.jpg);
+#box1 {
+  background: url(../images/tribute-page.jpg) center center no-repeat;
 }
 
-.box3 {
-  background: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/twitchtv-viewer.jpg);
+#box2 {
+  background: url(../images/local-weather-app.jpg) center center no-repeat;
 }
 
-.box4 {
-  background: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/wikipedia-viewer.jpg);
+#box3 {
+  background: url(../images/twitchtv-viewer.jpg) center center no-repeat;
 }
 
-.box5 {
-  background: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/threejs_youtube.jpg);
+#box4 {
+  background: url(../images/wikipedia-viewer.jpg) center center no-repeat;
 }
 
-.box6 {
-  background: url(https://asjasroos.nyc3.digitaloceanspaces.com/personal-website/projects-images/random-quote.jpg);
+#box5 {
+  background: url(../images/threejs_youtube.jpg) center center no-repeat;
+}
+
+#box6 {
+  background: url(../images/random-quote.jpg) center center no-repeat;
 }
 
 #footer {
@@ -183,12 +191,15 @@ and (max-width: 640px) {
   }
 
   .project-row {
-    min-width: 100vw;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-bottom: 0;
   }
 
   .box {
-    min-height: 180px;
-    min-width: 180px;
+    border: 4px solid gray;
+    min-width: 100%;
+    margin-bottom: 20px;
   }
 
   #footer p {
