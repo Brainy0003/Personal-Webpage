@@ -41,6 +41,7 @@ $procionoFont: 'Prociono', serif;
   display: flex;
   flex-direction: column;
   font-size: $mainFontSize;
+  overflow-x: hidden;
   width: 100vw;
 
   h2 {
