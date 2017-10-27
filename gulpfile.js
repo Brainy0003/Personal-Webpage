@@ -1,6 +1,7 @@
-var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var cssbeautify = require('gulp-cssbeautify');
+var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 // Run sass files to css files
@@ -28,9 +29,17 @@ gulp.task('beautifycss', function() {
     .pipe(gulp.dest('styles/'));;
 });
 
+// Minify css
+gulp.task('minify-css', () => {
+  return gulp.src('styles/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest(''));
+});
+
 // Watch both sass and css files and update automatically
 gulp.task('watch', function() {
   gulp.watch('build/src/*.scss', ['sass']),
   gulp.watch('build/src/*.css', ['style-formatting']),
-  gulp.watch('build/postcss/*.css', ['beautifycss']);
+  gulp.watch('build/postcss/*.css', ['beautifycss']),
+  gulp.watch('styles/*.css', ['minify-css']);
 });
