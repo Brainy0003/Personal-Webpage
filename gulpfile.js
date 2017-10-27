@@ -33,6 +33,8 @@ gulp.task('beautifycss', function() {
 gulp.task('minify-css', () => {
   return gulp.src('styles/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cleanCSS({level: '2'}))
+    .pipe(cleanCSS({format: 'keep-breaks'}))
     .pipe(gulp.dest(''));
 });
 
