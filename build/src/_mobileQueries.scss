@@ -1,0 +1,41 @@
+@media screen and (min-width: 340px) and (max-width: 767px) { 
+  .background h1 {
+    font-size: 1.4em;
+    min-width: 350px;
+  }
+
+  body h2 {
+    font-size: 1.3em;
+    padding: 0 20px;
+  }
+
+  .form-line {
+    border-right: 0;
+  }
+
+  .contact-section .col-md-6 {
+    width: 100vw;
+  }
+
+  .row-margin {
+    margin-bottom: 0;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .background h1 {
+    font-size: 1.8em;
+    min-width: 350px;
+  }
+
+  body h2 {
+    font-size: 1.8em;
+    padding: 0 20px;
+  }
+
+  .form-line {
+    border-right: 1px solid #B29999;
+  }
+}
