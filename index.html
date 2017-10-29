@@ -12,16 +12,17 @@
     <meta property="og:title" content="The website of A-J Roos">
     <meta property="og:type" content="Personal Website">
     <meta property="og:url" content="https://asjasroos.co.za">
-    <meta property="og:image" content="http://asjasroos.co.za/img/header_photo.jpeg">
+    <meta property="og:image" content="https://asjasroos.co.za/img/header_photo.jpeg">
     <meta property="og:description" content="The personal website of A-J Roos.">
 
     <link href="style.css" rel="stylesheet">
     <link href="bootstrap-4.0.0-beta-2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body class="body">
     <!-- Main Nav Sticky -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand">Personal Portfolio| A-J Roos</a>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,19 +32,19 @@
           <div class="collapse navbar-collapse" id="bs-nav">
             <ul class="navbar-nav ml-md-auto d-md-flex">
               <li class="nav-item active">
-                <a class="nav-link" id="twitter" href="https://twitter.com/asjasroos" target="_blank">Twitter</a>
+                <a class="nav-link" href="https://twitter.com/asjasroos" target="_blank">Twitter</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" id="github" href="https://github.com/Asjas" target="_blank">Github</a>
+                <a class="nav-link" href="https://github.com/Asjas" target="_blank">Github</a>
               </li>
               <li class="nav-item active">
-              <a class="nav-link" id="linkedin" href="https://www.linkedin.com/in/asjasroos/" target="_blank">Linkedin</a>
+              <a class="nav-link" href="https://www.linkedin.com/in/asjasroos/" target="_blank">Linkedin</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" id="contact" href="#">Contact Me</a>
+                <a class="nav-link" href="#contact">Contact Me</a>
               </li>
             </ul>
-        </div>
+          </div>
       </div>
     </nav>
     <!-- Hero (Background and Header)-->
@@ -51,80 +52,107 @@
       <h1>Hi, I'm A-J Roos. I'm a Front-End Web Developer.</h1>
       <img src="images/background-hero.jpg">
     </div>
-    <h2>Here are some sample projects I've worked on.</h2>
+    <h2>Here are some sample <span class="projects"><span class="inverse-projects">projects</span></span> I've worked on.</h2>
     <!-- Project Showcase -->
-    <div class="projects">
-      <div class="project-row">
-        <div class="box">
+    <div class="container">
+      <div class="row row-margin">
+        <div class="col-md-6 col-lg-4">
           <div class="view">
-            <img src="images/tribute-page.jpg">
+            <img class="img-fluid img-thumbnail" src="images/tribute-page.jpg">
               <div class="mask">
                 <h2>Tribute Page</h2>
                 <p>This is a Tribute Page I built for Freecodecamp.</p>
-                <a href="https://codepen.io/asjas/full/rzJdMK/" class="info">Codepen Link</a>
+                <a href="https://codepen.io/asjas/full/rzJdMK/" class="info" target="_blank">Codepen Link</a>
               </div>
           </div>
         </div>
-        <div class="box">
+        <div class="col-md-6 col-lg-4">
           <div class="view">
-            <img src="images/local-weather-app.jpg">
+            <img class="img-fluid img-thumbnail" src="images/local-weather-app.jpg">
               <div class="mask">
                 <h2>Local Weather App</h2>
                 <p>This is a Local Weather App I built for Freecodecamp.</p>
-                <a href="https://codepen.io/asjas/full/YrNZya/" class="info">Codepen Link</a>
+                <a href="https://codepen.io/asjas/full/YrNZya/" class="info" target="_blank">Codepen Link</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="view">
+            <img class="img-fluid img-thumbnail" src="images/twitchtv-viewer.jpg">
+              <div class="mask">
+                <h2>Twitch.tv Viewer</h2>
+                <p>This is a Twitch.tv Viewer I built for Freecodecamp.</p>
+                <a href="https://codepen.io/asjas/full/KXBxxE/" class="info" target="_blank">Codepen Link</a>
               </div>
           </div>
         </div>
       </div>
-      <div class="project-row">
-        <div class="box">
-            <div class="view">
-              <img src="images/twitchtv-viewer.jpg">
-                <div class="mask">
-                  <h2>Twitch.tv Viewer</h2>
-                  <p>This is a Twitch.tv Viewer I built for Freecodecamp.</p>
-                  <a href="https://codepen.io/asjas/full/KXBxxE/" class="info">Codepen Link</a>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="view">
-              <img src="images/wikipedia-viewer.jpg">
-                <div class="mask">
-                  <h2>Wikipedia Viewer</h2>
-                  <p>This is a Wikipedia Viewer I built for Freecodecamp.</p>
-                  <a href="https://codepen.io/asjas/full/RLZwGz/" class="info">Codepen Link</a>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="project-row">
-        <div class="box">
-            <div class="view">
-              <img src="images/threejs.jpg">
-                <div class="mask">
-                  <h2>Three.js 3d Youtube Viewer</h2>
-                  <p>This is a 3d Youtube Viewer I built using Three.js.</p>
-                  <a href="https://codepen.io/asjas/full/pWawPm/" class="info">Codepen Link</a>
-                </div>
-            </div>
-        </div>
-        <div class="box">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
           <div class="view">
-            <img src="images/random-quote.jpg">
+            <img class="img-fluid img-thumbnail" src="images/wikipedia-viewer.jpg">
+              <div class="mask">
+                <h2>Wikipedia Viewer</h2>
+                <p>This is a Wikipedia Viewer I built for Freecodecamp.</p>
+                <a href="https://codepen.io/asjas/full/RLZwGz/" class="info" target="_blank">Codepen Link</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="view">
+            <img class="img-fluid img-thumbnail" src="images/threejs.jpg">
+              <div class="mask">
+                <h2>Three.js 3d Youtube Viewer</h2>
+                <p>This is a 3d Youtube Viewer I built using Three.js.</p>
+                <a href="https://codepen.io/asjas/full/pWawPm/" class="info" target="_blank">Codepen Link</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="view">
+            <img class="img-fluid img-thumbnail" src="images/random-quote.jpg">
               <div class="mask">
                 <h2>Random Quote Generator</h2>
                 <p>This is a Random Quote Generator I built for Freecodecamp.</p>
-                <a href="https://codepen.io/asjas/full/rGOOrq/" class="info">Codepen Link</a>
+                <a href="https://codepen.io/asjas/full/rGOOrq/" class="info" target="_blank">Codepen Link</a>
               </div>
           </div>
         </div>
       </div>
     </div>
+    <section id="contact">
+      <div class="section-content">
+        <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with me</span></h1>
+      </div>
+      <div class="contact-section">
+        <div class="container">
+          <form class="row">
+            <div class="col-sm-11 col-md-6 form-line">
+              <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" class="form-control" id="" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>	
+            </div>
+            <div class="col-sm-11 col-md-6">
+              <div class="form-group">
+                <label for="message"> Message</label>
+                <textarea  class="form-control" id="message" placeholder="Enter Your Message"></textarea>
+              </div>
+              <div>
+                <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <footer id="footer">
       <p>Copyright © A-J Roos 2017. All Rights Reserved.</p>
     </footer>
-
     <!-- Bootstrap JavaScript files -->
     <!-- Insert at the bottom of the body so that -->
     <!-- the website loads faster -->
