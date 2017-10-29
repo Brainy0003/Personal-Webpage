@@ -1,8 +1,9 @@
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var cssbeautify = require('gulp-cssbeautify');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const cssbeautify = require('gulp-cssbeautify');
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
+const sass = require('gulp-sass');
 
 // Run sass files to css files
 gulp.task('sass', function() {
@@ -38,10 +39,18 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest(''));
 });
 
+// Minify & compress images
+gulp.task('minify-images', () => {
+  gulp.src('build/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('images/'))
+});
+
 // Watch both sass and css files and update automatically
 gulp.task('watch', function() {
   gulp.watch('build/src/*.scss', ['sass']),
   gulp.watch('build/src/*.css', ['style-formatting']),
   gulp.watch('build/postcss/*.css', ['beautifycss']),
-  gulp.watch('styles/*.css', ['minify-css']);
+  gulp.watch('styles/*.css', ['minify-css']),
+  gulp.watch('build/images/*', ['minify-images']);
 });
