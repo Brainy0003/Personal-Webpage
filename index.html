@@ -56,7 +56,7 @@
     <!-- Project Showcase -->
     <div class="container">
       <div class="row row-margin">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-6">
           <div class="view">
             <img class="img-fluid img-thumbnail" src="images/tribute-page.jpg">
               <div class="mask">
@@ -66,7 +66,17 @@
               </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-6">
+          <div class="view">
+            <img class="img-fluid img-thumbnail" src="images/random-quote.jpg">
+              <div class="mask">
+                <h2>Random Quote Generator</h2>
+                <p>This is a Random Quote Generator I built for Freecodecamp.</p>
+                <a href="https://codepen.io/asjas/full/rGOOrq/" class="info" target="_blank">Codepen Link</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
           <div class="view">
             <img class="img-fluid img-thumbnail" src="images/local-weather-app.jpg">
               <div class="mask">
@@ -76,7 +86,7 @@
               </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-6">
           <div class="view">
             <img class="img-fluid img-thumbnail" src="images/twitchtv-viewer.jpg">
               <div class="mask">
@@ -86,9 +96,7 @@
               </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-6">
           <div class="view">
             <img class="img-fluid img-thumbnail" src="images/wikipedia-viewer.jpg">
               <div class="mask">
@@ -98,23 +106,13 @@
               </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-6">
           <div class="view">
             <img class="img-fluid img-thumbnail" src="images/threejs.jpg">
               <div class="mask">
                 <h2>Three.js 3d Youtube Viewer</h2>
                 <p>This is a 3d Youtube Viewer I built using Three.js.</p>
                 <a href="https://codepen.io/asjas/full/pWawPm/" class="info" target="_blank">Codepen Link</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="view">
-            <img class="img-fluid img-thumbnail" src="images/random-quote.jpg">
-              <div class="mask">
-                <h2>Random Quote Generator</h2>
-                <p>This is a Random Quote Generator I built for Freecodecamp.</p>
-                <a href="https://codepen.io/asjas/full/rGOOrq/" class="info" target="_blank">Codepen Link</a>
               </div>
           </div>
         </div>
@@ -126,24 +124,25 @@
       </div>
       <div class="contact-section">
         <div class="container">
-          <form class="row">
+          <form class="row" name="input" method="POST" action="https://formspree.io/asjas@outlook.com">
             <div class="col-xs-12 col-sm-11 col-md-6 form-line">
               <div class="form-group">
                 <label for="name">Your name</label>
-                <input type="text" class="form-control" id="" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Name" required>
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" placeholder="Email" required>
               </div>	
             </div>
             <div class="col-xs-12 col-sm-11 col-md-6">
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" id="message" placeholder="Enter Your Message"></textarea>
+                <textarea class="form-control" id="message" placeholder="Enter Your Message" required></textarea>
+                <input type="hidden" name="_subject" value="Contacted on Portolio Website." />
               </div>
               <div>
-                <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+                <button type="button" value="Send" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message</button>
               </div>
             </div>
           </form>

@@ -17,8 +17,22 @@
     width: 100vw;
   }
 
-  .row-margin {
-    margin-bottom: 0;
+  .view {
+    &:hover h2 {
+      font-size: 1.2em;
+      top: -10px;
+    }
+
+    &:hover p {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      top: -40px;
+    }
+
+    &:hover a.info {
+      transform: translateY(-85px);
+    }
   }
 
 }
@@ -37,5 +51,39 @@
 
   .form-line {
     border-right: 1px solid #B29999;
+  }
+
+  .view {
+    &:hover h2 {
+      font-size: 0.9em;
+      top: -10px;
+    }
+
+    &:hover p {
+      font-size: 0.9em;
+      margin: 0;
+      padding: 0;
+      top: -40px;
+    }
+
+    &:hover a.info {
+      transform: translateY(-110px);
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { 
+  .view {
+    &:hover h2 {
+      font-size: 1.2em;
+      top: -5px;
+    }
+
+    &:hover p {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      top: -25px;
+    }
   }
 }
