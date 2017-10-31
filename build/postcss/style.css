@@ -255,10 +255,10 @@ textarea.form-control {
     top: -25px; } }
 
 .intro-header {
+  height: 92vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -281,9 +281,6 @@ textarea.form-control {
   font-family: "Prociono", serif;
   letter-spacing: 0.045em;
   width: 50%; }
-
-#footer {
-  margin-top: -60px; }
 
 *,
 *:before,
@@ -354,7 +351,8 @@ textarea.form-control {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 2.2vh; }
+  padding-top: 2.2vh;
+  background: #e7e7e7; }
   #footer p {
     display: -webkit-box;
     display: -ms-flexbox;
