@@ -1,0 +1,23 @@
+// Thank you page displayed after submitting the contact form
+.intro-header {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-message {
+  font-family: $procionoFont;
+  letter-spacing: 0.045em;
+  width: 50%;
+}
+
+#footer {
+  margin-top: -60px;
+}

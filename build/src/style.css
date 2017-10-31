@@ -234,6 +234,25 @@ textarea.form-control {
     padding: 0;
     top: -25px; } }
 
+.intro-header {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center; }
+
+.intro-header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.intro-message {
+  font-family: "Prociono", serif;
+  letter-spacing: 0.045em;
+  width: 50%; }
+
+#footer {
+  margin-top: -60px; }
+
 *,
 *:before,
 *:after {
