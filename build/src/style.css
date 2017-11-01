@@ -182,7 +182,7 @@ textarea.form-control {
   letter-spacing: 0.02em;
   width: 150px; }
 
-@media screen and (min-width: 340px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .background h1 {
     font-size: 1.4em;
     min-width: 350px; }
@@ -282,7 +282,6 @@ textarea.form-control {
     font-size: 2.1em;
     left: 50%;
     letter-spacing: .032em;
-    min-width: 500px;
     padding: .26em;
     position: absolute;
     text-align: center;
