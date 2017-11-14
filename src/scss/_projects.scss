@@ -13,6 +13,32 @@
     background-color: rgba(52, 58, 64, 0.8);
     opacity: 0;
     transition: all 0.4s ease-in-out;
+
+    h2 {
+    color: #fff;
+    font-family: $katibehFont;
+    font-size: 1.8em;
+    letter-spacing: .125em;
+    margin: 20px 0 0 0;
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateY(-100px);
+    transition: all 0.2s ease-in-out;
+  }
+
+    p {
+      color: #fff;
+      font-family: $neutonFont;
+      font-size: 1.2em;
+      letter-spacing: .045em;
+      opacity: 0;
+      position: relative;
+      text-align: center;
+      transform: translateY(100px);
+      transition: all 0.2s linear;
+    }
   }
 
   .mask, .content {
@@ -29,32 +55,6 @@
     max-width: 100%;
     overflow: hidden;
     position: relative;
-    transition: all 0.2s linear;
-  }
-
-  h2 {
-    color: #fff;
-    font-family: $katibehFont;
-    font-size: 1.45em;
-    letter-spacing: .125em;
-    margin: 20px 0 0 0;
-    opacity: 0;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    transform: translateY(-100px);
-    transition: all 0.2s ease-in-out;
-  }
-
-  p {
-    color: #fff;
-    font-family: $neutonFont;
-    font-size: 1.1em;
-    letter-spacing: .045em;
-    opacity: 0;
-    position: relative;
-    text-align: center;
-    transform: translateY(100px);
     transition: all 0.2s linear;
   }
 
@@ -87,16 +87,17 @@
   &:hover h2,
   &:hover a.info {
     opacity: 1;
-    transform: translateY(-55px);
+    transform: translateY(10px);
   }
 
   &:hover p {
     opacity: 1;
-    transform: translateY(-70px);
+    transform: translateY(40px);
     transition-delay: 0.1s;
   }
 
   &:hover a.info {
     transition-delay: 0.2s;
+    transform: translateY(45px);
   }
 }
