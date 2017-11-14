@@ -1,56 +1,72 @@
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
-const cssbeautify = require('gulp-cssbeautify');
-const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const sass = require('gulp-sass');
+const autoprefixer = require("gulp-autoprefixer");
+const babel = require("gulp-babel");
+const cleanCSS = require("gulp-clean-css");
+const cssbeautify = require("gulp-cssbeautify");
+const gulp = require("gulp");
+const livereload = require("gulp-livereload");
+const plumber = require("gulp-plumber");
+const rename = require("gulp-rename");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
 
-// Run sass files to css files
-gulp.task('sass', function() {
-  return gulp.src('build/src/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('build/src/'));
+// HTML
+gulp.task("reload-html", function() {
+  gulp.src("*.html")
+    .pipe(livereload());
 });
 
-// Format css stylesheets with autoprefixer
-gulp.task('style-formatting', function() {
-  gulp.src('build/src/*.css')
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('build/postcss/'));
-});
-
-// Beautify css
-gulp.task('beautifycss', function() {
-  return gulp.src('build/postcss/*.css')
+// Styles
+gulp.task("styles", function() {
+  return gulp.src("src/scss/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass({ style: "expanded" }))
+    .pipe(plumber(function (err) {
+      console.log("Styles Task Error");
+      console.log(err);
+      this.emit("end");
+    }))
     .pipe(cssbeautify({
-      indent: '  ',
-      openbrace: 'end-of-line',
+      indent: "  ",
+      openbrace: "end-of-line",
       autosemicolon: true
     }))
-    .pipe(gulp.dest('styles/'));;
+    .pipe(gulp.dest("src/css/"))
+    .pipe(autoprefixer())
+    .pipe(cleanCSS({compatibility: "ie8"}))
+    .pipe(cleanCSS({level: "2"}))
+    .pipe(cleanCSS({format: "keep-breaks"}))
+    .pipe(sourcemaps.write())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest("public/css/"))
+    .pipe(livereload());
 });
 
-// Minify css
-gulp.task('minify-css', () => {
-  return gulp.src('styles/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(cleanCSS({level: '2'}))
-    .pipe(cleanCSS({format: 'keep-breaks'}))
-    .pipe(gulp.dest(''));
+// JavaScript
+gulp.task("minify-js", function (){
+  return gulp.src("src/js/*.js")
+    .pipe(plumber(function (err) {
+      console.log("JavaScript Task Error");
+      console.log(err);
+      this.emit("end");
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ["es2015"]
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest("public/js/"))
+    .pipe(sourcemaps.write())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(livereload());
 });
 
-// Minify & compress images
-gulp.task('minify-images', () => {
-  gulp.src('build/images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('images/'))
-});
-
-// Watch both sass and css files and update automatically
-gulp.task('watch', function() {
-  gulp.watch('build/src/*.scss', ['sass']),
-  gulp.watch('build/src/*.css', ['style-formatting']),
-  gulp.watch('build/postcss/*.css', ['beautifycss']),
-  gulp.watch('styles/*.css', ['minify-css']),
-  gulp.watch('build/images/*', ['minify-images']);
+// Watch task runner
+gulp.task("watch", function() {
+  console.log("Starting watch task");
+  require("./server.js");
+  livereload.listen();
+  gulp.watch("src/scss/*.scss", ["styles"]),
+  gulp.watch("src/js/*.js", ["minify-js"]),
+  gulp.watch("*.html", ["reload-html"]);
 });
