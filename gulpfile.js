@@ -2,7 +2,12 @@ const autoprefixer = require("gulp-autoprefixer");
 const babel = require("gulp-babel");
 const cleanCSS = require("gulp-clean-css");
 const cssbeautify = require("gulp-cssbeautify");
+const del = require("del");
 const gulp = require("gulp");
+const imagemin = require("gulp-imagemin");
+const imageminJpegRecompress = require("imagemin-jpeg-recompress");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminWebp = require("imagemin-webp");
 const livereload = require("gulp-livereload");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
@@ -44,7 +49,7 @@ gulp.task("styles", function() {
 
 // JavaScript
 gulp.task("minify-js", function (){
-  return gulp.src("src/js/*.js")
+  return gulp.src("src/js/javascript.js")
     .pipe(plumber(function (err) {
       console.log("JavaScript Task Error");
       console.log(err);
@@ -61,7 +66,34 @@ gulp.task("minify-js", function (){
     .pipe(livereload());
 });
 
-gulp.task("default", ["reload-html", "styles", "minify-js"], function() {
+// Images
+gulp.task("image-minify", function() {
+  return gulp.src("src/images/*")
+    .pipe(imagemin(
+      [
+        imagemin.jpegtran(),
+        imagemin.optipng(),
+        imagemin.svgo(),
+        imageminPngquant(),
+        imageminJpegRecompress(),
+        imageminWebp()
+      ]
+    ))
+    .pipe(gulp.dest("public/images/"))
+    .pipe(livereload());
+});
+
+// Cleanup public folders
+gulp.task("clean", function() {
+  return del.sync([
+    "public/css/*",
+    "public/js/javascript.js",
+    "public/images/*"
+  ]);
+});
+
+// Default task
+gulp.task("default", ["clean", "reload-html", "styles", "minify-js", "image-minify"], function() {
   console.log("Running default task");
 });
 
@@ -71,6 +103,7 @@ gulp.task("watch", ["default"], function() {
   require("./server.js");
   livereload.listen();
   gulp.watch("src/scss/*.scss", ["styles"]),
-  gulp.watch("src/js/*.js", ["minify-js"]),
-  gulp.watch("*.html", ["reload-html"]);
+  gulp.watch("src/js/javascript.js", ["minify-js"]),
+  gulp.watch("*.html", ["reload-html"]),
+  gulp.watch("src/images/*", ["image-minify"]);
 });
