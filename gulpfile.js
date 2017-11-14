@@ -61,8 +61,12 @@ gulp.task("minify-js", function (){
     .pipe(livereload());
 });
 
+gulp.task("default", ["reload-html", "styles", "minify-js"], function() {
+  console.log("Running default task");
+});
+
 // Watch task runner
-gulp.task("watch", function() {
+gulp.task("watch", ["default"], function() {
   console.log("Starting watch task");
   require("./server.js");
   livereload.listen();
