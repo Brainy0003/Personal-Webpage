@@ -48,7 +48,7 @@ gulp.task("styles", function() {
 });
 
 // JavaScript
-gulp.task("minify-js", function (){
+gulp.task("minify-js", function () {
   return gulp.src("src/js/javascript.js")
     .pipe(plumber(function (err) {
       console.log("JavaScript Task Error");
@@ -60,9 +60,9 @@ gulp.task("minify-js", function (){
       presets: ["es2015"]
     }))
     .pipe(uglify())
-    .pipe(gulp.dest("public/js/"))
     .pipe(sourcemaps.write())
     .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest("public/js/"))
     .pipe(livereload());
 });
 
