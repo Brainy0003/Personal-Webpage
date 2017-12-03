@@ -25,12 +25,12 @@ gulp.task("reload-html", function() {
 gulp.task("styles", function() {
   return gulp.src("src/scss/*.scss")
     .pipe(sourcemaps.init())
-    .pipe(sass({ style: "expanded" }))
     .pipe(plumber(function (err) {
       console.log("Styles Task Error");
       console.log(err);
       this.emit("end");
     }))
+    .pipe(sass({ style: "expanded" }))
     .pipe(cssbeautify({
       indent: "  ",
       openbrace: "end-of-line",
