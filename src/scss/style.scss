@@ -1,83 +1,51 @@
-@import "variables", "navbar", "projects", "contactform", "mobileQueries", "thankyoupage";
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+header {
+  background: red;
 }
 
-.body {
-  background-color: $backgroundColor;
+header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: green;
+  transform: translateY(-200%);
+  transition: .2s;
+}
+
+body.scroll header.sticky{
+  transform: translateY(0);
+}
+
+.nav-wrapper {
+  max-width: 1200px;
+  background: black;
+  margin: 0 auto;
+  position: relative;
+  padding: 7px 0;
   display: flex;
-  flex-direction: column;
-  font-size: $mainFontSize;
-  font-size: 16px;
-  overflow-x: hidden;
-  width: 100vw;
-
-  h2 {
-    font-family: $neutonFont;
-    letter-spacing: .045em;
-    margin: 80px 0;
-    text-align: center;
-  }
+  justify-content: space-between;
+  align-items: center;
 }
 
-// Hero banner
-.background {
-  height: 524px;
-  overflow: hidden;
-
-  img {
-    position: relative;
-  }
-
-  h1 {
-    background: rgba(0, 0, 0, 0.85);
-    border-radius: 6px;
-    color: $headerFontColor;
-    font-family: $procionoFont;
-    font-size: 2.1em;
-    left: 50%;
-    letter-spacing: .032em;
-    padding: .26em;
-    position: absolute; 
-    text-align: center;
-    top: 280px;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-  }
-}
-
-// Yellow box on span
-.projects {
+nav ul li {
   display: inline-block;
-  background: rgb(255, 255, 30);
-  padding: 0 6px 8px 8px;
-  margin: 0 -2px 0 -3px;
-  color: #212529;
-  transform:  translateY(-2.5%) rotate(3deg);
+  padding: 0 10px;
+  margin-bottom: 0;
 }
 
-// Inverse span text
-.inverse-projects {
-  display: inline-block;
-  transform:  translateY(+2.5%) rotate(-3deg);
+nav ul li a {
+  font-size: 17px;
+  line-height: 22px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: .3s;
 }
 
-// Page footer
-#footer {
-  color: $fontColor;
-  display: flex;
-  justify-content: center;
-  padding-top: 2.2vh;
-  background: #e7e7e7;
-
-  p {
-    display: flex;
-    font-family: $neutonFont;
-    font-size: 0.85em;
-    justify-content: center;
-    letter-spacing: .05em;
-  }
+nav ul li a:hover {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px solid #FFF;
 }
