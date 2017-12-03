@@ -41,8 +41,12 @@ gulp.task("styles", function() {
     .pipe(cleanCSS({compatibility: "ie8"}))
     .pipe(cleanCSS({level: "2"}))
     .pipe(cleanCSS({format: "keep-breaks"}))
-    .pipe(sourcemaps.write())
     .pipe(rename({suffix: ".min"}))
+    .pipe(sourcemaps.write("../css/", {
+      sourceMappingURL: function(file) {
+        return file.relative + ".map";
+      }
+    }))
     .pipe(gulp.dest("public/css/"))
     .pipe(livereload());
 });
@@ -60,8 +64,12 @@ gulp.task("minify-js", function () {
       presets: ["es2015"]
     }))
     .pipe(uglify())
-    .pipe(sourcemaps.write())
     .pipe(rename({suffix: ".min"}))
+    .pipe(sourcemaps.write("../js/", {
+      sourceMappingURL: function(file) {
+        return file.relative + ".map";
+      }
+    }))
     .pipe(gulp.dest("public/js/"))
     .pipe(livereload());
 });
@@ -75,8 +83,7 @@ gulp.task("image-minify", function() {
         imagemin.optipng(),
         imagemin.svgo(),
         imageminPngquant(),
-        imageminJpegRecompress(),
-        imageminWebp()
+        imageminJpegRecompress()
       ]
     ))
     .pipe(gulp.dest("public/images/"))
