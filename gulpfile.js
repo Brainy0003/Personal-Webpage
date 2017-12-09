@@ -53,7 +53,7 @@ gulp.task("styles", function() {
 
 // JavaScript
 gulp.task("minify-js", function () {
-  return gulp.src("src/js/javascript.js")
+  return gulp.src("src/js/*.js")
     .pipe(plumber(function (err) {
       console.log("JavaScript Task Error");
       console.log(err);
@@ -94,7 +94,7 @@ gulp.task("image-minify", function() {
 gulp.task("clean", function() {
   return del.sync([
     "public/css/*",
-    "public/js/javascript.js",
+    "public/js/*",
     "public/images/*"
   ]);
 });
@@ -110,7 +110,7 @@ gulp.task("watch", ["default"], function() {
   require("./server.js");
   livereload.listen();
   gulp.watch("src/scss/*.scss", ["styles"]),
-  gulp.watch("src/js/javascript.js", ["minify-js"]),
+  gulp.watch("src/js/*.js", ["minify-js"]),
   gulp.watch("*.html", ["reload-html"]),
   gulp.watch("src/images/*", ["image-minify"]);
 });
