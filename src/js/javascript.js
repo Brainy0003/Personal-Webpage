@@ -1,17 +1,24 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var section = document.querySelector("section");
-  var header = document.querySelector("header");
-  var clonedHeader = header.cloneNode(true);
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('section');
+  const header = document.querySelector('header');
+  const clonedHeader = header.cloneNode(true);
 
   section.insertBefore(clonedHeader, header);
 
-  var stickyHeader = document.querySelector("header");
-  stickyHeader.classList.add("sticky");
+  const stickyHeader = document.querySelector('header');
+  stickyHeader.classList.add('sticky');
 
-  window.addEventListener("scroll", function() {
-    var scrollFromTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    document.querySelector("body").classList.toggle("scroll", (scrollFromTop > 350));
+  window.addEventListener('scroll', () => {
+    const scrollFromTop =
+      window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    document.querySelector('body').classList.toggle('scroll', scrollFromTop > 350);
   });
-  
 });
 
+/*
+ Parallax Scene
+*/
+const scene = document.getElementById('scene');
+const parallax = new Parallax(scene);
