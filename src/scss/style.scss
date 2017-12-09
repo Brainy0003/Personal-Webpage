@@ -1,51 +1,139 @@
+body {
+  font-size: 16px;
+}
+
+
+/*
+  Navbar Style
+*/
+
 header {
-  background: red;
+  background: transparent;
+  position: relative;
+  width: 100%;
 }
 
 header.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   background: green;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   transform: translateY(-200%);
-  transition: .2s;
+  transition: 0.2s;
 }
 
-body.scroll header.sticky{
+body.scroll header.sticky {
   transform: translateY(0);
 }
 
 .nav-wrapper {
-  max-width: 1200px;
-  background: black;
-  margin: 0 auto;
-  position: relative;
-  padding: 7px 0;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 7px 0;
+  position: relative;
+}
+
+div.name a {
+  color: #fff;
+  font-size: 1.6rem;
+  pointer-events: none;
+  text-decoration: none;
 }
 
 nav ul li {
   display: inline-block;
-  padding: 0 10px;
   margin-bottom: 0;
+  padding: 0 10px;
 }
 
 nav ul li a {
-  font-size: 17px;
-  line-height: 22px;
-  text-decoration: none;
+  border-bottom: 1px solid transparent;
   color: white;
   cursor: pointer;
-  border-bottom: 1px solid transparent;
+  font-size: 1.2rem;
+  line-height: 3rem;
   padding-bottom: 3px;
-  transition: .3s;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #FFF;
+  border-bottom: 1px solid #fff;
+  color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid #FFF;
+}
+
+
+/* Parallax Style Main */
+
+.cover-main {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/background-hero.jpeg");
+  height: 60vh;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 100%;
+}
+
+#scene {
+  margin-top: 100px;
+}
+
+#scene li.name {
+  color: #fff;
+  font-size: 3.3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+#scene li.title {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+#scene li.btn {
+  color: #fff;
+  margin-top: 150px;
+  text-align: center;
+  width: 100%;
+}
+
+.portfolio-btn,
+.contact-btn {
+  font-size: 1.1rem;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  pointer-events: auto;
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.portfolio-btn {
+  margin-right: 30px;
+}
+
+.contact-btn {
+  margin-left: 30px;
 }
