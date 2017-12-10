@@ -41,13 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     Slider js for library showcase
   */
   $('.slider').slick({
+    lazyLoad: 'ondemand',
     autoplay: true,
     autoplaySpeed: 1500,
     dots: true,
     centerMode: true,
     slidesToShow: 4,
     slidesToScroll: 4,
+    infinite: true,
     adaptiveHeight: true,
+    pauseOnHover: false,
     arrows: true,
     prevArrow: '<button type="button" class="slick-prev">Previous</button>',
     nextArrow: '<button type="button" class="slick-next">Mext</button>',
