@@ -204,6 +204,8 @@ section.beating-heart {
   padding: 50px 10px;
   text-align: center;
   h2 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
     margin-bottom: 30px;
     &:after {
       background-color: #fff;
@@ -211,6 +213,11 @@ section.beating-heart {
   }
   span {
     font-size: 5rem;
+  }
+  p {
+    line-height: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 50px;
   }
 }
 
