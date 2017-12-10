@@ -206,6 +206,7 @@ section.beating-heart {
 }
 
 section.beating-heart h2 {
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   line-height: 2.8rem;
   margin-bottom: 30px;
@@ -217,6 +218,7 @@ section.beating-heart h2:after {
 
 section.beating-heart span {
   font-size: 5rem;
+  font-family: "Playfair Display", serif;
 }
 
 section.beating-heart p {
