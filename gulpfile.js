@@ -86,7 +86,7 @@ gulp.task('image-minify', () =>
     .pipe(livereload()));
 
 // Cleanup public folders
-gulp.task('clean', () => del.sync(['public/css/*', 'public/js/*', 'public/images/*']));
+gulp.task('clean', () => del.sync(['public/css/*.css*', 'public/js/*', 'public/images/*']));
 
 // Default task
 gulp.task('default', ['clean', 'reload-html', 'styles', 'minify-js', 'image-minify'], () => {
