@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.pageYOffset !== undefined
         ? window.pageYOffset
         : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    document.querySelector('body').classList.toggle('scroll', scrollFromTop > 350);
+    document.querySelector('body').classList.toggle('scroll', scrollFromTop > 500);
   });
 });
 
@@ -22,3 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 const scene = document.getElementById('scene');
 const parallax = new Parallax(scene);
+
+/*
+  Masonry
+*/
+const grid = document.querySelector('.grid');
+const masonry = new Masonry(grid, {
+  itemSelector: '.grid-item',
+  columnWidth: 120,
+  fitWidth: true,
+  gutter: 2,
+});
