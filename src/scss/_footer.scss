@@ -1,0 +1,16 @@
+// Footer style main
+footer {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/footer_background.jpeg) center center no-repeat / cover;
+  padding-top: 50px;
+  height: 200px;
+  color: #fff;
+  text-align: center;
+  h2,
+  span {
+    font-style: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+}

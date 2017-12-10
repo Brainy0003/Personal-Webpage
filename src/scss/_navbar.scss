@@ -1,0 +1,66 @@
+// Navbar
+header {
+  background: transparent;
+  position: relative;
+  width: 100%;
+}
+
+.nav-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 7px 0;
+  position: relative;
+}
+
+.name a {
+  color: #fff;
+  font-family: $playfair;
+  font-size: 2rem;
+  line-height: 1rem;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.menu li {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0 10px;
+}
+
+.menu a {
+  border-bottom: 1px solid transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  padding-bottom: 3px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  Sticky navbar style
+*/
+header.sticky {
+  background: rgba(0, 0, 0, 0.85);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(-200%);
+  transition: 0.2s;
+  z-index: 5;
+}
+
+body.scroll header.sticky {
+  transform: translateY(0);
+}
