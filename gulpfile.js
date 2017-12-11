@@ -82,8 +82,8 @@ gulp.task('image-minify', () =>
       imageminPngquant({ quality: '60' }),
       imageminJpegRecompress({
         accurate: true,
-        quality: 'high',
-        max: 60,
+        quality: 'medium',
+        max: 50,
       }),
     ]))
     .pipe(gulp.dest('public/images/'))
