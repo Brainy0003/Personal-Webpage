@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
   const masonry = new Masonry(grid, {
     itemSelector: '.grid-item',
-    columnWidth: 120,
+    columnWidth: 80,
     fitWidth: true,
     gutter: 2,
   });
