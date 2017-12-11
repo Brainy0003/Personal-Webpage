@@ -148,3 +148,12 @@ window.onload = function masonryFunc() {
     ],
   });
 };
+
+/*
+  Async loading google web fonts
+*/
+WebFont.load({
+  google: {
+    families: ['Playfair Display:400', 'Montserrat:400'],
+  },
+});
