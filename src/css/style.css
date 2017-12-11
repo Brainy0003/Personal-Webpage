@@ -359,17 +359,11 @@ template {
 }
 
 html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", sans-serif;
   font-size: 100%;
   overflow-x: hidden;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  overflow-x: hidden;
-  width: 100vw;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /*
@@ -1657,7 +1651,7 @@ header {
   padding: 0 10px;
 }
 
-.menu a {
+.menu li a {
   border-bottom: 1px solid transparent;
   color: white;
   cursor: pointer;
@@ -1668,7 +1662,7 @@ header {
   transition: 0.3s;
 }
 
-.menu a:hover {
+.menu li a:hover {
   border-bottom: 1px solid #fff;
   color: #fff;
   text-decoration: none;
@@ -1853,9 +1847,6 @@ body.scroll header.sticky {
   margin-left: 2rem;
 }
 
-/*
-  Masonry.js Style Main
-*/
 h2.sub-title {
   display: block;
   font-family: "Playfair Display", serif;
@@ -1875,7 +1866,10 @@ h2.sub-title:after {
   width: 100px;
 }
 
-h2.sub-title .masonry-grid {
+/*
+  Masonry.js Style Main
+*/
+.masonry-grid {
   position: relative;
 }
 
@@ -1937,7 +1931,7 @@ section.beating-heart p {
   margin-bottom: 2.5rem;
 }
 
-.heart {
+section.beating-heart .heart {
   animation: pulse 1s infinite;
   margin: 0 50px;
   position: relative;
