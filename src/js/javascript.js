@@ -21,6 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*
+    Smooth Scrolling Functionality
+  */
+  function smoothScrollEffect(selector) {
+    const links = document.querySelectorAll(selector);
+
+    links.forEach((anchor) => {
+      anchor.addEventListener('click', function scroll(el) {
+        el.preventDefault();
+        const hashValue = $(this.hash);
+
+        if (hashValue.length) {
+          $('html, body')
+            .stop()
+            .animate(
+              {
+                scrollTop: hashValue.offset().top - 80,
+              },
+              1000,
+            );
+        }
+      });
+    });
+  }
+  /*
+    Enable smooth scrolling for navbar & both the buttons in the hero banner
+  */
+  smoothScrollEffect('.menu li a');
+  smoothScrollEffect('.wrapper li a');
+
+  /*
     Parallax Scene in hero banner
   */
   const scene = document.getElementById('scene');
@@ -48,11 +78,66 @@ document.addEventListener('DOMContentLoaded', () => {
     centerMode: true,
     slidesToShow: 4,
     slidesToScroll: 4,
-    infinite: true,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     pauseOnHover: false,
     arrows: true,
     prevArrow: '<button type="button" class="slick-prev">Previous</button>',
     nextArrow: '<button type="button" class="slick-next">Mext</button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 475,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  /*
+    Responsive Navbar Menu
+  */
+  const body = document.querySelector('body');
+
+  function addOverlay(element) {
+    element.addEventListener('click', () => {
+      body.classList.add('menu-active');
+    });
+  }
+
+  function removeOverlay(element) {
+    element.addEventListener('click', () => {
+      body.classList.remove('menu-active');
+    });
+  }
+
+  const menuTrigger = document.querySelectorAll('.js-menu-trigger');
+  const mainOverlay = document.querySelectorAll('.js-main-overlay');
+  const anchorsClicked = document.querySelectorAll('.menu li a');
+
+  menuTrigger.forEach((el) => {
+    addOverlay(el);
+  });
+
+  mainOverlay.forEach((el) => {
+    removeOverlay(el);
+  });
+
+  anchorsClicked.forEach((el) => {
+    removeOverlay(el);
   });
 });
