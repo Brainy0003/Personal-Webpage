@@ -1637,6 +1637,7 @@ header {
   max-width: 1200px;
   padding: 7px 0;
   position: relative;
+  width: 100%;
 }
 
 .name a {
@@ -1791,6 +1792,7 @@ body.scroll header.sticky {
 }
 
 #scene {
+  padding: 0;
   margin-top: 7.5rem;
 }
 
@@ -2115,6 +2117,10 @@ footer p,
 }
 
 @media only screen and (max-width: 560px) {
+  .cover-main {
+    height: 100vh;
+  }
+
   .menu {
     max-width: 200px;
   }
