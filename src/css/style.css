@@ -1718,6 +1718,7 @@ body.scroll header.sticky {
     position: fixed;
     right: 0;
     top: 0;
+    width: 100%;
     z-index: 6;
   }
 
@@ -2119,7 +2120,7 @@ footer p,
 
 @media only screen and (max-width: 560px) {
   .cover-main {
-    height: 100vh;
+    height: 80vh;
   }
 
   .menu {
