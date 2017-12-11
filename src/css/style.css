@@ -1683,7 +1683,6 @@ header.sticky {
   top: 0;
   transform: translateY(-200%);
   transition: 0.2s;
-  width: 100vw;
   z-index: 5;
 }
 
@@ -1879,6 +1878,12 @@ h2.sub-title:after {
 
 .grid {
   margin: 0 auto;
+}
+
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .grid-item {
