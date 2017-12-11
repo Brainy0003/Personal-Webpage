@@ -23,6 +23,7 @@
     position: fixed;
     right: 0;
     top: 0;
+    width: 100%;
     z-index: 6;
     &:after {
       background: url(../images/close-icon.svg) no-repeat center / cover;
