@@ -56,13 +56,12 @@
     display: block;
     margin-top: 20px;
     padding: 10px 0;
-  }
-
-  nav.nav-wrapper ul li a {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    &:hover {
-      border-color: transparent;
+    a {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      &:hover {
+        border-color: transparent;
+      }
     }
   }
 

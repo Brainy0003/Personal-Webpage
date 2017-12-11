@@ -1,23 +1,5 @@
 // Masonry Grid for Portfolio Images
-h2.sub-title {
-  display: block;
-  font-family: $playfair;
-  font-size: 2rem;
-  line-height: 2.2rem;
-  margin: 70px auto;
-  position: relative;
-  text-align: center;
-  &:after {
-    background-color: #000;
-    content: "";
-    display: block;
-    height: 2px;
-    margin: 30px auto 0 auto;
-    width: 100px;
-  }
-}
-
-h2.sub-title .masonry-grid {
+.masonry-grid {
   position: relative;
 }
 

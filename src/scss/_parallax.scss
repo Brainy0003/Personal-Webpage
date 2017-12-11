@@ -14,30 +14,30 @@
 #scene {
   padding: 0;
   margin-top: 7.5rem;
-}
 
-#scene li.name {
-  color: #fff;
-  font-size: 3.3rem;
-  line-height: 3.5rem;
-  text-align: center;
-  width: 100%;
-}
+  li.name {
+    color: #fff;
+    font-size: 3.3rem;
+    line-height: 3.5rem;
+    text-align: center;
+    width: 100%;
+  }
 
-#scene li.title {
-  color: #fff;
-  font-size: 2rem;
-  line-height: 2rem;
-  margin-top: 4.6rem;
-  text-align: center;
-  width: 100%;
-}
+  li.title {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 4.6rem;
+    text-align: center;
+    width: 100%;
+  }
 
-#scene li.btn {
-  color: #fff;
-  margin-top: 9rem;
-  text-align: center;
-  width: 100%;
+  li.btn {
+    color: #fff;
+    margin-top: 9rem;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .portfolio-btn,
@@ -65,4 +65,23 @@
 
 .contact-btn {
   margin-left: 2rem;
+}
+
+h2.sub-title {
+  display: block;
+  font-family: $playfair;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin: 70px auto;
+  position: relative;
+  text-align: center;
+
+  &:after {
+    background-color: #000;
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 30px auto 0 auto;
+    width: 100px;
+  }
 }

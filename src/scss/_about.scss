@@ -11,29 +11,33 @@ section.beating-heart {
   margin-top: 4rem;
   padding: 50px 10px;
   text-align: center;
+
   h2 {
     color: #fff;
+
     &:after {
       background-color: #fff;
     }
   }
+
   span {
     font-family: $playfair;
     font-size: 5rem;
   }
+
   p {
     font-size: 2rem;
     line-height: 2.2rem;
     margin-bottom: 2.5rem;
   }
-}
 
-.heart {
-  animation: pulse 1s infinite;
-  margin: 0 50px;
-  position: relative;
-  top: 25px;
-  width: 7rem;
+  .heart {
+    animation: pulse 1s infinite;
+    margin: 0 50px;
+    position: relative;
+    top: 25px;
+    width: 7rem;
+  }
 }
 
 /*
