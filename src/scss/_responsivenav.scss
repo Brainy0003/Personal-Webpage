@@ -23,7 +23,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 6;
     &:after {
       background: url(../images/close-icon.svg) no-repeat center / cover;
@@ -47,7 +47,7 @@
     top: 0;
     transform: translate3d(-100%, 0, 0);
     transition: 0.2s;
-    width: 100%;
+    width: 100vw;
     z-index: 30;
     padding-bottom: 0;
   }
