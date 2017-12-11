@@ -1730,7 +1730,7 @@ body.scroll header.sticky {
     display: block;
     height: 35px;
     position: fixed;
-    right: 20px;
+    right: 10px;
     top: 15px;
     width: 35px;
     z-index: 20;
