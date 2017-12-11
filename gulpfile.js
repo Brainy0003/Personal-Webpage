@@ -77,13 +77,13 @@ gulp.task('image-minify', () =>
     .src('src/images/*')
     .pipe(imagemin([
       imagemin.jpegtran({ progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.optipng({ optimizationLevel: 7 }),
       imagemin.svgo(),
-      imageminPngquant({ quality: '60' }),
+      imageminPngquant({ quality: '30' }),
       imageminJpegRecompress({
         accurate: true,
-        quality: 'medium',
-        max: 50,
+        quality: 'low',
+        max: 35,
       }),
     ]))
     .pipe(gulp.dest('public/images/'))
