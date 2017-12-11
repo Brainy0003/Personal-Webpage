@@ -359,12 +359,12 @@ template {
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Montserrat", sans-serif;
   font-size: 100%;
   overflow-x: hidden;
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
 
@@ -1657,6 +1657,7 @@ header {
   border-bottom: 1px solid transparent;
   color: white;
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   line-height: 3rem;
   padding-bottom: 3px;
@@ -1797,6 +1798,7 @@ body.scroll header.sticky {
 
 #scene li.name {
   color: #fff;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.3rem;
   line-height: 3.5rem;
   text-align: center;
@@ -1805,6 +1807,7 @@ body.scroll header.sticky {
 
 #scene li.title {
   color: #fff;
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   line-height: 2rem;
   margin-top: 4.6rem;
@@ -1814,6 +1817,7 @@ body.scroll header.sticky {
 
 #scene li.btn {
   color: #fff;
+  font-family: "Montserrat", sans-serif;
   margin-top: 9rem;
   text-align: center;
   width: 100%;
@@ -1933,6 +1937,7 @@ section.beating-heart span {
 }
 
 section.beating-heart p {
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   line-height: 2.2rem;
   margin-bottom: 2.5rem;
@@ -2031,6 +2036,7 @@ footer {
 
 footer p,
   footer span {
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   line-height: 1.1rem;
 }
