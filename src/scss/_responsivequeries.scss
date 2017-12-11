@@ -5,9 +5,11 @@
     margin-left: 10px;
   }
 
-  #scene li.name {
-    font-size: 2.3rem;
-    line-height: 2.5rem;
+  #scene {
+    li.name {
+      font-size: 2.3rem;
+      line-height: 2.5rem;
+    }
 
     li.title {
       font-size: 2rem;
@@ -95,9 +97,11 @@
     max-width: 200px;
   }
 
-  #scene li.name {
-    font-size: 2rem;
-    line-height: 2.2rem;
+  #scene {
+    li.name {
+      font-size: 2rem;
+      line-height: 2.2rem;
+    }
 
     li.title {
       font-size: 1.7rem;
@@ -144,9 +148,11 @@
 }
 
 @media only screen and (max-width: 470px) {
-  #scene li.name {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
+  #scene {
+    li.name {
+      font-size: 1.5rem;
+      line-height: 1.6rem;
+    }
 
     li.title {
       font-size: 1.3rem;
@@ -172,9 +178,11 @@
     line-height: 1.2rem;
   }
 
-  #scene li.name {
-    font-size: 1.3rem;
-    line-height: 1.3rem;
+  #scene {
+    li.name {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+    }
 
     li.title {
       font-size: 1.2rem;
