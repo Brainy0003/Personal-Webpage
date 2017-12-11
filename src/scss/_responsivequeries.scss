@@ -85,6 +85,10 @@
 }
 
 @media only screen and (max-width: 560px) {
+  .cover-main {
+    height: 100vh;
+  }
+
   .menu {
     max-width: 200px;
   }
