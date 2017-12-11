@@ -1,15 +1,30 @@
 @import "reboot", "font";
 
+html {
+  font-size: 100%;
+}
 body {
   font-family: $montserrat;
-  font-size: 16px;
+  font-size: 1rem;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/*
+  Webicons Social Icons
+*/
+@import "webicons";
 
 /*
   Navbar Style
 */
 @import "navbar";
+
+/*
+  Responsive Mobile Navbar Style
+*/
+@import "responsivenav";
 
 /*
   Parallax Style Main
@@ -42,6 +57,6 @@ body {
 @import "footer";
 
 /*
-  Webicons Social Icons
+  Responsive media queries
 */
-@import "webicons";
+@import "responsivequeries";
