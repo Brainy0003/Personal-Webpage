@@ -1684,7 +1684,7 @@ header.sticky {
   top: 0;
   transform: translateY(-200%);
   transition: 0.2s;
-  width: 100%;
+  width: 100vw;
   z-index: 5;
 }
 
