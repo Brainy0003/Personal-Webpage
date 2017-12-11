@@ -57,6 +57,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const parallax = new Parallax(scene);
 
   /*
+    Responsive Navbar Menu
+  */
+  const body = document.querySelector('body');
+
+  function addOverlay(element) {
+    element.addEventListener('click', () => {
+      body.classList.add('menu-active');
+    });
+  }
+
+  function removeOverlay(element) {
+    element.addEventListener('click', () => {
+      body.classList.remove('menu-active');
+    });
+  }
+
+  const menuTrigger = document.querySelectorAll('.js-menu-trigger');
+  const mainOverlay = document.querySelectorAll('.js-main-overlay');
+  const anchorsClicked = document.querySelectorAll('.menu li a');
+
+  menuTrigger.forEach((el) => {
+    addOverlay(el);
+  });
+
+  mainOverlay.forEach((el) => {
+    removeOverlay(el);
+  });
+
+  anchorsClicked.forEach((el) => {
+    removeOverlay(el);
+  });
+});
+
+/*
+  Window.onload is used to initialize masonry and slick slider only
+  when all the images have been loaded. This helps to make sure the
+  images load correctly and don't overlap esp. in the masonry grid.
+*/
+window.onload = function masonryFunc() {
+  /*
     Masonry Grid for image showcase
   */
   const grid = document.querySelector('.grid');
@@ -107,37 +147,4 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     ],
   });
-
-  /*
-    Responsive Navbar Menu
-  */
-  const body = document.querySelector('body');
-
-  function addOverlay(element) {
-    element.addEventListener('click', () => {
-      body.classList.add('menu-active');
-    });
-  }
-
-  function removeOverlay(element) {
-    element.addEventListener('click', () => {
-      body.classList.remove('menu-active');
-    });
-  }
-
-  const menuTrigger = document.querySelectorAll('.js-menu-trigger');
-  const mainOverlay = document.querySelectorAll('.js-main-overlay');
-  const anchorsClicked = document.querySelectorAll('.menu li a');
-
-  menuTrigger.forEach((el) => {
-    addOverlay(el);
-  });
-
-  mainOverlay.forEach((el) => {
-    removeOverlay(el);
-  });
-
-  anchorsClicked.forEach((el) => {
-    removeOverlay(el);
-  });
-});
+};
