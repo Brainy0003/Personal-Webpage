@@ -1796,6 +1796,10 @@ body.scroll header.sticky {
   margin-top: 7.5rem;
 }
 
+#scene li {
+  list-style-type: none;
+}
+
 #scene li.name {
   color: #fff;
   font-family: "Montserrat", sans-serif;
