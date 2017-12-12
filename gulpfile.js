@@ -4,6 +4,8 @@ const cleanCSS = require('gulp-clean-css');
 const cssbeautify = require('gulp-cssbeautify');
 const del = require('del');
 const gulp = require('gulp');
+const penthouse = require('gulp-penthouse');
+const fs = require('fs');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
@@ -19,7 +21,7 @@ gulp.task('reload-html', () => {
   gulp.src('*.html').pipe(livereload());
 });
 
-// Styles
+// CSS Styles
 gulp.task('styles', () =>
   gulp
     .src('src/scss/*.scss')
@@ -47,6 +49,37 @@ gulp.task('styles', () =>
     }))
     .pipe(gulp.dest('public/css/'))
     .pipe(livereload()));
+
+// Penthouse Critical CSS
+gulp.task('critical-css', () =>
+  gulp
+    .src('src/css/style.css')
+    .pipe(penthouse({
+      out: 'critical.css',
+      url: 'https://asjasroos.co.za',
+      width: 1900,
+      height: 1200,
+      strict: true,
+      timeout: 30000,
+      pageLoadSkipTimeout: 0,
+      forceInclude: [
+        // selectors to keep
+        '.keepMeEvenIfNotSeenInDom',
+        /^\.regexWorksToo/,
+      ],
+      userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(cleanCSS({ level: '2' }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('../css/', {
+      sourceMappingURL(file) {
+        return `${file.relative}.map`;
+      },
+    }))
+    .pipe(gulp.dest('public/css/')));
 
 // JavaScript
 gulp.task('minify-js', () =>
@@ -90,12 +123,17 @@ gulp.task('image-minify', () =>
     .pipe(livereload()));
 
 // Cleanup public folders
-gulp.task('clean', () => del.sync(['public/css/*.css*', 'public/js/*', 'public/images/*']));
+gulp.task('clean', () =>
+  del.sync(['public/css/*.css*', 'src/css/critical/*', 'public/js/*', 'public/images/*']));
 
 // Default task
-gulp.task('default', ['clean', 'reload-html', 'styles', 'minify-js', 'image-minify'], () => {
-  console.log('Running default task');
-});
+gulp.task(
+  'default',
+  ['clean', 'reload-html', 'styles', 'minify-js', 'image-minify', 'critical-css'],
+  () => {
+    console.log('Running default task');
+  },
+);
 
 // Watch task runner
 gulp.task('watch', ['default'], () => {
@@ -103,6 +141,7 @@ gulp.task('watch', ['default'], () => {
   require('./server.js');
   livereload.listen();
   gulp.watch('src/scss/*.scss', ['styles']),
+  gulp.watch('src/css/*.css', ['critical-css']),
   gulp.watch('src/js/*.js', ['minify-js']),
   gulp.watch('*.html', ['reload-html']),
   gulp.watch('src/images/*', ['image-minify']);
