@@ -1,4 +1,12 @@
 /*
+  forEach polyfill for Internet Explorer.
+*/
+(function () {
+  if (typeof NodeList.prototype.forEach === 'function') return false;
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}());
+
+/*
   On page load I clone the header and create a sticky header that
   renders when you scroll past a certain point in the website.
 */
