@@ -124,7 +124,7 @@ gulp.task('image-minify', () =>
 
 // Cleanup public folders
 gulp.task('clean', () =>
-  del.sync(['public/css/*.css*', 'src/css/critical/*', 'public/js/*', 'public/images/*']));
+  del.sync(['public/css/*.css*', 'src/css/critical/*', 'public/js/*min.js', 'public/images/*']));
 
 // Default task
 gulp.task(
