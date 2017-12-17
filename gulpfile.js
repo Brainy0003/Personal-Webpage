@@ -5,7 +5,6 @@ const cssbeautify = require('gulp-cssbeautify');
 const del = require('del');
 const gulp = require('gulp');
 const penthouse = require('gulp-penthouse');
-const fs = require('fs');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
@@ -25,12 +24,12 @@ gulp.task('reload-html', () => {
 gulp.task('styles', () =>
   gulp
     .src('src/scss/*.scss')
-    .pipe(sourcemaps.init())
     .pipe(plumber(function (err) {
       console.log('Styles Task Error');
       console.log(err);
       this.emit('end');
     }))
+    .pipe(sourcemaps.init())
     .pipe(sass({ style: 'expanded' }))
     .pipe(cssbeautify({
       indent: '  ',
@@ -124,7 +123,7 @@ gulp.task('image-minify', () =>
 
 // Cleanup public folders
 gulp.task('clean', () =>
-  del.sync(['public/css/*.css*', 'src/css/critical/*', 'public/js/*min.js', 'public/images/*']));
+  del.sync(['public/css/*.css*', 'src/css/critical/*', 'public/js/*min.js*', 'public/images/*']));
 
 // Default task
 gulp.task(
