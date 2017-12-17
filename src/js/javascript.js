@@ -1,5 +1,5 @@
 /*
-  forEach polyfill for Internet Explorer.
+  NodeList forEach polyfill for Internet Explorer.
 */
 (function () {
   if (typeof NodeList.prototype.forEach === 'function') return false;
@@ -7,7 +7,7 @@
 }());
 
 /*
-  On page load I clone the header and create a sticky header that
+  On page load this clones the header and creates a sticky header that
   renders when you scroll past a certain point in the website.
 */
 document.addEventListener('DOMContentLoaded', () => {
