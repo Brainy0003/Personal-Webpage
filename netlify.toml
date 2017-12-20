@@ -22,4 +22,4 @@ YARN_VERSION = "0.28.4"
 from = "http://asjasroos.co.za"
 to = "https://asjasroos.co.za:443"
 status = 301
-force = false
+force = true
