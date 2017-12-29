@@ -1640,11 +1640,13 @@ header {
 
 .name a {
   color: #fff;
+  cursor: default;
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   line-height: 1rem;
   pointer-events: none;
   text-decoration: none;
+  text-shadow: 2px 2px 0px transparent, 1px 1px 0px rgba(255, 255, 255, 0.2), 2px 2px 0px rgba(255, 255, 255, 0.2);
 }
 
 .menu li {
@@ -1875,6 +1877,7 @@ h2.sub-title {
   margin: 70px auto;
   position: relative;
   text-align: center;
+  text-shadow: 1px 1px 0px transparent, 1px 1px 0px rgba(0, 0, 0, 0.2), 2px 2px 0px rgba(0, 0, 0, 0.2), 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 h2.sub-title:after {
@@ -1936,6 +1939,10 @@ section.beating-heart {
   margin-top: 4rem;
   padding: 50px 10px;
   text-align: center;
+}
+
+section.beating-heart .wrapper {
+  margin: 0;
 }
 
 section.beating-heart h2 {
