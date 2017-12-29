@@ -82,6 +82,8 @@ h2.sub-title {
   margin: 70px auto;
   position: relative;
   text-align: center;
+  text-shadow: 1px 1px 0px transparent, 1px 1px 0px rgba(0, 0, 0, 0.2),
+    2px 2px 0px rgba(0, 0, 0, 0.2), 3px 3px 1px rgba(0, 0, 0, 0.2);
 
   &:after {
     background-color: #000;

@@ -18,11 +18,14 @@ header {
 
 .name a {
   color: #fff;
+  cursor: default;
   font-family: $playfair;
   font-size: 2rem;
   line-height: 1rem;
   pointer-events: none;
   text-decoration: none;
+  text-shadow: 2px 2px 0px transparent, 1px 1px 0px rgba(255, 255, 255, 0.2),
+    2px 2px 0px rgba(255, 255, 255, 0.2);
 }
 
 .menu li {
