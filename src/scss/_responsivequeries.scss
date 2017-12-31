@@ -34,7 +34,21 @@
   }
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 736px) {
+  #scene {
+    li.name {
+      font-size: 2rem;
+    }
+
+    li.title {
+      font-size: 1.7rem;
+    }
+
+    li.btn {
+      margin-top: 8.4rem;
+    }
+  }
+
   section.beating-heart {
     .heart {
       width: 4.5rem;
@@ -60,6 +74,10 @@
   .webicon.large {
     width: 36px;
     height: 36px;
+  }
+
+  .form-wrapper {
+    padding: 60px 20px;
   }
 }
 
@@ -89,23 +107,17 @@
 }
 
 @media only screen and (max-width: 560px) {
-  .cover-main {
-    height: 80vh;
-  }
-
   .menu {
     max-width: 200px;
   }
 
   #scene {
     li.name {
-      font-size: 2rem;
-      line-height: 2.2rem;
+      font-size: 1.7rem;
     }
 
     li.title {
-      font-size: 1.7rem;
-      line-height: 1.9rem;
+      font-size: 1.4rem;
     }
 
     li.btn {
@@ -147,32 +159,11 @@
   }
 }
 
-@media only screen and (max-width: 470px) {
-  #scene {
-    li.name {
-      font-size: 1.5rem;
-      line-height: 1.6rem;
-    }
-
-    li.title {
-      font-size: 1.3rem;
-      line-height: 1.4rem;
-    }
-  }
-
-  section.beating-heart {
-    p {
-      font-size: 1.3rem;
-      line-height: 1.4rem;
-    }
-
-    span {
-      font-size: 2rem;
-    }
-  }
-}
-
 @media only screen and (max-width: 420px) {
+  .cover-main {
+    height: 60vh;
+  }
+
   .name a {
     font-size: 1.5rem;
     line-height: 1.2rem;
@@ -180,19 +171,17 @@
 
   #scene {
     li.name {
-      font-size: 1.3rem;
-      line-height: 1.3rem;
+      font-size: 1.6rem;
     }
 
     li.title {
-      font-size: 1.2rem;
-      line-height: 1.3rem;
+      font-size: 1.3rem;
     }
   }
 
   .portfolio-btn,
   .contact-btn {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   h2.sub-title {
@@ -220,5 +209,14 @@
   section.slider-div p {
     font-size: 1.2rem;
     line-height: 1.3rem;
+  }
+
+  .form-wrapper {
+    padding: 30px 0;
+    font-size: 0.9rem;
+  }
+
+  .form-wrapper form input[type="submit"] {
+    font-size: 1.2rem;
   }
 }
