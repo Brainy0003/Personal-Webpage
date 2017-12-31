@@ -2046,13 +2046,17 @@ section.slider-div p {
   Contact Me Form
 */
 /* Registration Form Style */
+.contact .wrapper {
+  max-width: 1400px;
+}
+
 .form-wrapper {
   background-image: linear-gradient(135deg, #4290f7 20%, #29bbff 80%);
   color: #999;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   margin-bottom: 70px;
-  padding: 100px;
+  padding: 100px 0;
   position: relative;
   z-index: 3;
 }
@@ -2278,6 +2282,10 @@ footer p,
 }
 
 @media only screen and (max-width: 560px) {
+  .cover-main {
+    height: 60vh;
+  }
+
   .menu {
     max-width: 200px;
   }
@@ -2329,10 +2337,6 @@ footer p,
 }
 
 @media only screen and (max-width: 420px) {
-  .cover-main {
-    height: 60vh;
-  }
-
   .name a {
     font-size: 1.5rem;
     line-height: 1.2rem;
