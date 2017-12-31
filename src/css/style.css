@@ -2045,6 +2045,118 @@ section.slider-div p {
 /*
   Contact Me Form
 */
+/* Registration Form Style */
+.form-wrapper {
+  background-image: linear-gradient(135deg, #4290f7 20%, #29bbff 80%);
+  color: #999;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 70px;
+  padding: 100px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Form Input Styles */
+.form-wrapper form input,
+.message {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  outline: none;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.message {
+  min-height: 130px;
+  max-height: 300px;
+}
+
+.form-wrapper form input:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.form-wrapper form input[type="text"]:focus,
+.form-wrapper form input[type="text"]:active,
+.form-wrapper form input[type="email"]:focus,
+.form-wrapper form input[type="email"]:active,
+.form-wrapper form textarea:active,
+.form-wrapper form textarea:focus {
+  border-color: #ccc;
+}
+
+.form-wrapper form input[type="submit"] {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-color: #24b41f;
+  background-size: 20px 20px;
+  border: solid 1px #24b41f;
+  border-bottom-width: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.form-wrapper form input[type="submit"]:hover {
+  background-size: 40px 40px;
+}
+
+/* Main Registration Box Style */
+.form-block {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.form-block::before,
+.form-block::after {
+  background: #fff;
+  border-radius: 5px;
+  border: solid 1px #e6e6e6;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0.9) translate(0, 0);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.form-block::after {
+  transition-delay: 0.05s;
+}
+
+.form-block:hover::before {
+  transform: scale(0.96) translate(0, 16px);
+}
+
+.form-block:hover::after {
+  transform: scale(0.92) translate(0, 32px);
+  z-index: -2;
+}
+
 /*
   Footer Style
 */
@@ -2097,7 +2209,19 @@ footer p,
   }
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 736px) {
+  #scene li.name {
+    font-size: 2rem;
+  }
+
+  #scene li.title {
+    font-size: 1.7rem;
+  }
+
+  #scene li.btn {
+    margin-top: 8.4rem;
+  }
+
   section.beating-heart .heart {
     width: 4.5rem;
     margin: 0 30px 0 30px;
@@ -2121,6 +2245,10 @@ footer p,
   .webicon.large {
     width: 36px;
     height: 36px;
+  }
+
+  .form-wrapper {
+    padding: 60px 20px;
   }
 }
 
@@ -2150,22 +2278,16 @@ footer p,
 }
 
 @media only screen and (max-width: 560px) {
-  .cover-main {
-    height: 80vh;
-  }
-
   .menu {
     max-width: 200px;
   }
 
   #scene li.name {
-    font-size: 2rem;
-    line-height: 2.2rem;
+    font-size: 1.7rem;
   }
 
   #scene li.title {
-    font-size: 1.7rem;
-    line-height: 1.9rem;
+    font-size: 1.4rem;
   }
 
   #scene li.btn {
@@ -2206,46 +2328,27 @@ footer p,
   }
 }
 
-@media only screen and (max-width: 470px) {
-  #scene li.name {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
-  }
-
-  #scene li.title {
-    font-size: 1.3rem;
-    line-height: 1.4rem;
-  }
-
-  section.beating-heart p {
-    font-size: 1.3rem;
-    line-height: 1.4rem;
-  }
-
-  section.beating-heart span {
-    font-size: 2rem;
-  }
-}
-
 @media only screen and (max-width: 420px) {
+  .cover-main {
+    height: 60vh;
+  }
+
   .name a {
     font-size: 1.5rem;
     line-height: 1.2rem;
   }
 
   #scene li.name {
-    font-size: 1.3rem;
-    line-height: 1.3rem;
+    font-size: 1.6rem;
   }
 
   #scene li.title {
-    font-size: 1.2rem;
-    line-height: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .portfolio-btn,
   .contact-btn {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   h2.sub-title {
@@ -2271,5 +2374,14 @@ footer p,
   section.slider-div p {
     font-size: 1.2rem;
     line-height: 1.3rem;
+  }
+
+  .form-wrapper {
+    padding: 30px 0;
+    font-size: 0.9rem;
+  }
+
+  .form-wrapper form input[type="submit"] {
+    font-size: 1.2rem;
   }
 }
