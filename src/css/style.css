@@ -2190,12 +2190,10 @@ footer p,
 
   #scene li.name {
     font-size: 2.3rem;
-    line-height: 2.5rem;
   }
 
   #scene li.title {
     font-size: 2rem;
-    line-height: 2.2rem;
   }
 
   section.beating-heart p {
@@ -2214,6 +2212,10 @@ footer p,
 }
 
 @media only screen and (max-width: 736px) {
+  .cover-main {
+    height: 75vh;
+  }
+
   #scene li.name {
     font-size: 2rem;
   }
@@ -2282,10 +2284,6 @@ footer p,
 }
 
 @media only screen and (max-width: 560px) {
-  .cover-main {
-    height: 60vh;
-  }
-
   .menu {
     max-width: 200px;
   }
@@ -2296,10 +2294,6 @@ footer p,
 
   #scene li.title {
     font-size: 1.4rem;
-  }
-
-  #scene li.btn {
-    margin-top: 8.4rem;
   }
 
   .portfolio-btn,
