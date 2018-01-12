@@ -1,7 +1,0 @@
-(function(w){if(!w.loadCSS){w.loadCSS=function(){};}
-const rp=(loadCSS.relpreload={});rp.support=(function(){let ret;try{ret=w.document.createElement('link').relList.supports('preload');}catch(e){ret=false;}
-return function(){return ret;};}());rp.bindMediaToggle=function(link){const finalMedia=link.media||'all';function enableStylesheet(){link.media=finalMedia;}
-if(link.addEventListener){link.addEventListener('load',enableStylesheet);}else if(link.attachEvent){link.attachEvent('onload',enableStylesheet);}
-setTimeout(function(){link.rel='stylesheet';link.media='only x';});setTimeout(enableStylesheet,3000);};rp.poly=function(){if(rp.support()){return;}
-const links=w.document.getElementsByTagName('link');for(let i=0;i<links.length;i++){const link=links[i];if(link.rel==='preload'&&link.getAttribute('as')==='style'&&!link.getAttribute('data-loadcss')){link.setAttribute('data-loadcss',true);rp.bindMediaToggle(link);}}};if(!rp.support()){rp.poly();const run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener('load',function(){rp.poly();w.clearInterval(run);});}else if(w.attachEvent){w.attachEvent('onload',function(){rp.poly();w.clearInterval(run);});}}
-if(typeof exports!=='undefined'){exports.loadCSS=loadCSS;}else{w.loadCSS=loadCSS;}}(typeof global!=='undefined'?global:this));
