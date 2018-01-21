@@ -78,6 +78,7 @@ module.exports = {
       filename: './index.html',
     }),
     new ScriptExtHtmlWebpackPlugin({
+      sync: 'js/index.js',
       defaultAttribute: 'async',
     }),
     new ExtractTextPlugin({
