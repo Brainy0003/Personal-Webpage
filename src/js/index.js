@@ -1,10 +1,7 @@
-/*
-  NodeList forEach polyfill for Internet Explorer.
-*/
-(function () {
-  if (typeof NodeList.prototype.forEach === 'function') return false;
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}());
+import Parallax from 'parallax-js';
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import Masonry from 'masonry-layout';
 
 /*
   On page load this clones the header and creates a sticky header that
@@ -35,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll(selector);
 
     links.forEach((anchor) => {
-      anchor.addEventListener('click', function scroll(el) {
-        el.preventDefault();
+      anchor.addEventListener('click', function scroll() {
         const hashValue = $(this.hash);
 
         if (hashValue.length) {
