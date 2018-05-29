@@ -14,6 +14,20 @@
         "path": "/404/"
     },
     {
+        "componentChunkName": "component---src-pages-about-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "about.json",
+        "path": "/about/"
+    },
+    {
+        "componentChunkName": "component---src-pages-contact-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "contact.json",
+        "path": "/contact/"
+    },
+    {
         "componentChunkName": "component---src-pages-index-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
@@ -21,11 +35,11 @@
         "path": "/"
     },
     {
-        "componentChunkName": "component---src-pages-page-2-js",
+        "componentChunkName": "component---src-pages-portfolio-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "page-2.json",
-        "path": "/page-2/"
+        "jsonName": "portfolio.json",
+        "path": "/portfolio/"
     },
     {
         "componentChunkName": "component---src-pages-404-js",

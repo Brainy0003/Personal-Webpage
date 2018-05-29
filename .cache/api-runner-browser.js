@@ -1,6 +1,12 @@
 var plugins = [{
-      plugin: require('/home/asjas/git/Personal-Webpage/node_modules/gatsby-plugin-nprogress/gatsby-browser.js'),
-      options: {"plugins":[],"color":"tomato","showSpinner":true},
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-offline/gatsby-browser'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-typography/gatsby-browser'),
+      options: {"plugins":[],"pathToConfigModule":"src/utils/typography.js"},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-nprogress/gatsby-browser'),
+      options: {"plugins":[],"showSpinner":false},
     }]
 // During bootstrap, we write requires at top of this file which looks
 // basically like:

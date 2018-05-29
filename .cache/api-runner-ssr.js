@@ -1,9 +1,21 @@
 var plugins = [{
-      plugin: require('/home/asjas/git/Personal-Webpage/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/asjas/git/Personal-Webpage/node_modules/gatsby-plugin-styled-components/gatsby-ssr.js'),
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"Portfolio| A-J Roos","short_name":"Portfolio","start_url":"/","background_color":"#f7f0eb","theme_color":"#a2466c","display":"minimal-ui","icon":"src/img/icon.png"},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-typography/gatsby-ssr'),
+      options: {"plugins":[],"pathToConfigModule":"src/utils/typography.js"},
+    },{
+      plugin: require('C:/Users/Asjas/Documents/git/Personal-Webpage/node_modules/gatsby-plugin-google-fonts/gatsby-ssr'),
+      options: {"plugins":[],"fonts":["Playfair Display","Montserrat"]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
