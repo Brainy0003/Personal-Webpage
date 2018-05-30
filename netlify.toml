@@ -5,7 +5,7 @@ YARN_VERSION = "1.7.0"
 NODE_ENV = "production"
 
 [[redirects]]
-from = "http://asjasroos.co.za"
-to = "https://asjasroos.co.za:443"
+from = "http://www.asjasroos.co.za"
+to = "https://www.asjasroos.co.za:443"
 status = 301
 force = true
